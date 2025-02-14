@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useGetBooks, useDeleteBook } from "./components/hooks/useBooks";
-import SearchBar from "./components/SearchBar";
-import BooksTable from "./components/BooksTable";
-import Pagination from "./components/Pagination";
+
 import Link from "next/link";
+import { useDeleteBook, useGetBooks } from "@/components/hooks/useBooks";
+import SearchBar from "@/components/SearchBar";
+import BooksTable from "@/components/BooksTable";
+import Pagination from "@/components/Pagination";
 
 export default function Home() {
   const [page, setPage] = useState(1);

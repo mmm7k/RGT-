@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
-import { useAddBook } from "../components/hooks/useBooks";
+import { useAddBook } from "@/components/hooks/useBooks";
 
 // 유효성 검사 스키마
 const bookSchema = yup.object().shape({
