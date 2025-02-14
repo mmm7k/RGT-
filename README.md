@@ -55,9 +55,6 @@
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
 ┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정  
 
-┣ 📂 lib  
-┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
-┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
 
 ---
 
