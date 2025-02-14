@@ -32,41 +32,40 @@ const BooksTable = ({ books, handleDelete }: BooksTableProps) => {
           {books.map((book) => (
             <tr key={book.id} className="border-b hover:bg-gray-50">
               {/* 제목 */}
-              <td className="px-6 py-3 ">
-                <Link href={`/${book.id}`} legacyBehavior>
-                  <a className="block w-full h-full">{book.title}</a>
+              <td className="px-6 py-3">
+                <Link href={`/${book.id}`} className="block w-full h-full">
+                  {book.title}
                 </Link>
               </td>
 
               {/* 저자 */}
-              <td className="px-6 py-3 ">
-                <Link href={`/${book.id}`} legacyBehavior>
-                  <a className="block w-full h-full">{book.author}</a>
+              <td className="px-6 py-3">
+                <Link href={`/${book.id}`} className="block w-full h-full">
+                  {book.author}
                 </Link>
               </td>
 
               {/* 가격 */}
               <td className="px-6 py-3 text-right">
-                <Link href={`/${book.id}`} legacyBehavior>
-                  <a className="block w-full h-full">
-                    {book.price.toLocaleString()} 원
-                  </a>
+                <Link href={`/${book.id}`} className="block w-full h-full">
+                  {book.price.toLocaleString()} 원
                 </Link>
               </td>
 
               {/* 재고 */}
               <td className="px-6 py-3 text-right">
-                <Link href={`/${book.id}`} legacyBehavior>
-                  <a className="block w-full h-full">{book.stock}</a>
+                <Link href={`/${book.id}`} className="block w-full h-full">
+                  {book.stock}
                 </Link>
               </td>
 
               {/* 수정, 삭제 버튼 */}
               <td className="px-6 py-3 flex justify-center gap-3">
-                <Link href={`/edit/${book.id}`} legacyBehavior>
-                  <a className="text-blue-500 hover:text-blue-700">
-                    <AiFillEdit size={22} />
-                  </a>
+                <Link
+                  href={`/edit/${book.id}`}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <AiFillEdit size={22} />
                 </Link>
                 <button
                   className="text-red-500 hover:text-red-700"
