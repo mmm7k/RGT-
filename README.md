@@ -34,9 +34,6 @@
 ┃ ┃ ┣ 📜 page.tsx # 책 상세 페이지  
 ┃ ┣ 📂 add  
 ┃ ┃ ┣ 📜 page.tsx # 책 추가 페이지  
-┃ ┣ 📂 api  
-┃ ┃ ┣ 📂 books  
-┃ ┃ ┃ ┣ 📜 route.ts # API 라우트  
 ┃ ┣ 📂 edit  
 ┃ ┃ ┣ 📂 [id]  
 ┃ ┃ ┃ ┣ 📜 page.tsx # 책 수정 페이지  
@@ -52,20 +49,16 @@
 ┃ ┣ 📜 BooksTable.tsx # 책 목록 테이블 컴포넌트  
 ┃ ┣ 📜 EditBookForm.tsx # 책 수정 폼 컴포넌트  
 ┃ ┣ 📜 Pagination.tsx # 페이지네이션 컴포넌트  
-<<<<<<< HEAD
 ┃ ┣ 📜 SearchBar.tsx # 검색 바 컴포넌트
 
 ┣ 📂 lib  
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
 ┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
-=======
 ┃ ┣ 📜 SearchBar.tsx # 검색 바 컴포넌트
 
 ┣ 📂 lib  
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
 ┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
-
-> > > > > > > 0178a1066f48b66bbbd254016530fcd1143016a6
 
 ---
 
@@ -91,7 +84,9 @@ created_at → 생성 날짜 (기본값: 현재 시간)
 
 ---
 
-## URL ( 배포 : Vercel )
+## 배포 주소 ( 배포 : Vercel )
+
+> [https://rgt-wine.vercel.app/](https://rgt-wine.vercel.app/)
 
 ---
 
