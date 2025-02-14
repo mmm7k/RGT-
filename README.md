@@ -53,8 +53,7 @@
 
 ┣ 📂 lib  
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
-┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
-┃ ┣ 📜 SearchBar.tsx # 검색 바 컴포넌트
+┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정  
 
 ┣ 📂 lib  
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
