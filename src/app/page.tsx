@@ -7,6 +7,7 @@ import { useDeleteBook, useGetBooks } from "@/components/hooks/useBooks";
 import SearchBar from "@/components/SearchBar";
 import BooksTable from "@/components/BooksTable";
 import Pagination from "@/components/Pagination";
+import { message } from "antd";
 
 export default function Home() {
   const [page, setPage] = useState(1);
@@ -19,6 +20,14 @@ export default function Home() {
   const handleSearch = () => {
     setSearchQuery(searchQueryTemp); // 검색어 반영
     setPage(1); // 검색 시 첫 페이지로 이동
+  };
+
+  // 책 삭제 핸들러
+  const handleDelete = async (id: string) => {
+    const confirmDelete = confirm("정말 이 책을 삭제하시겠습니까?");
+    if (!confirmDelete) return;
+    await deleteBookMutation.mutateAsync(id);
+    message.success("책이 삭제되었습니다.");
   };
 
   return (
@@ -42,7 +51,7 @@ export default function Home() {
       {/* 책 목록 테이블 */}
       <BooksTable
         books={data?.data || []}
-        onDelete={(id) => deleteBookMutation.mutate(id)}
+        handleDelete={(id) => handleDelete(id)}
       />
 
       {/* 페이지네이션 */}

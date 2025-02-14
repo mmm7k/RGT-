@@ -37,6 +37,25 @@ export const useGetBooks = (
   });
 };
 
+// 책 상세 조회 API
+const fetchBookById = async (id: string) => {
+  const { data, error } = await supabase
+    .from("books")
+    .select("*")
+    .eq("id", id)
+    .single();
+  if (error) throw new Error(error.message);
+  return data;
+};
+
+export const useGetBookById = (id: string) => {
+  return useQuery({
+    queryKey: ["book", id],
+    queryFn: () => fetchBookById(id),
+    enabled: !!id,
+  });
+};
+
 // 책 삭제 API
 export const useDeleteBook = () => {
   const queryClient = useQueryClient();
@@ -63,5 +82,31 @@ export const useAddBook = () => {
       if (error) throw new Error(error.message);
     },
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["books"] }), // 추가 후 목록 갱신
+  });
+};
+
+// 책 수정 API
+export const useUpdateBook = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (updatedBook: {
+      id: string;
+      title: string;
+      author: string;
+      price: number;
+      stock: number;
+    }) => {
+      const { error } = await supabase
+        .from("books")
+        .update({
+          title: updatedBook.title,
+          author: updatedBook.author,
+          price: updatedBook.price,
+          stock: updatedBook.stock,
+        })
+        .eq("id", updatedBook.id);
+      if (error) throw new Error(error.message);
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["books"] }), // 수정 후 목록 갱신
   });
 };

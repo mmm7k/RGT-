@@ -9,8 +9,8 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "RGT",
-  description: "RGT",
+  title: "책 목록 | RGT",
+  description: "책 목록을 확인하는 페이지입니다.",
 };
 
 export default function RootLayout({

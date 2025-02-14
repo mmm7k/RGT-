@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 
 interface Book {
@@ -11,10 +12,10 @@ interface Book {
 
 interface BooksTableProps {
   books: Book[];
-  onDelete: (id: string) => void;
+  handleDelete: (id: string) => void;
 }
 
-const BooksTable = ({ books, onDelete }: BooksTableProps) => {
+const BooksTable = ({ books, handleDelete }: BooksTableProps) => {
   return (
     <div className="mt-6 bg-white shadow-md rounded-lg overflow-hidden">
       <table className="w-full border-collapse">
@@ -29,20 +30,47 @@ const BooksTable = ({ books, onDelete }: BooksTableProps) => {
         </thead>
         <tbody>
           {books.map((book) => (
-            <tr key={book.id} className="border-b hover:bg-gray-100">
-              <td className="px-6 py-4">{book.title}</td>
-              <td className="px-6 py-4">{book.author}</td>
-              <td className="px-6 py-4 text-right">
-                {book.price.toLocaleString()} 원
+            <tr key={book.id} className="border-b hover:bg-gray-50">
+              {/* 제목 */}
+              <td className="px-6 py-3 ">
+                <Link href={`/${book.id}`} legacyBehavior>
+                  <a className="block w-full h-full">{book.title}</a>
+                </Link>
               </td>
-              <td className="px-6 py-4 text-right">{book.stock}</td>
-              <td className="px-6 py-4 flex justify-center gap-3">
-                <button className="text-blue-500 hover:text-blue-700">
-                  <AiFillEdit size={22} />
-                </button>
+
+              {/* 저자 */}
+              <td className="px-6 py-3 ">
+                <Link href={`/${book.id}`} legacyBehavior>
+                  <a className="block w-full h-full">{book.author}</a>
+                </Link>
+              </td>
+
+              {/* 가격 */}
+              <td className="px-6 py-3 text-right">
+                <Link href={`/${book.id}`} legacyBehavior>
+                  <a className="block w-full h-full">
+                    {book.price.toLocaleString()} 원
+                  </a>
+                </Link>
+              </td>
+
+              {/* 재고 */}
+              <td className="px-6 py-3 text-right">
+                <Link href={`/${book.id}`} legacyBehavior>
+                  <a className="block w-full h-full">{book.stock}</a>
+                </Link>
+              </td>
+
+              {/* 수정, 삭제 버튼 */}
+              <td className="px-6 py-3 flex justify-center gap-3">
+                <Link href={`/edit/${book.id}`} legacyBehavior>
+                  <a className="text-blue-500 hover:text-blue-700">
+                    <AiFillEdit size={22} />
+                  </a>
+                </Link>
                 <button
                   className="text-red-500 hover:text-red-700"
-                  onClick={() => onDelete(book.id)}
+                  onClick={() => handleDelete(book.id)}
                 >
                   <AiFillDelete size={22} />
                 </button>

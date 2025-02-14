@@ -12,14 +12,14 @@ const SearchBar = ({
   onSearch,
 }: SearchBarProps) => {
   return (
-    <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-4 shadow-sm">
+    <div className="flex items-center gap-2 rounded-lg border-2 border-solid shadow-sm">
       <input
         type="text"
         placeholder="제목 또는 저자로 검색해주세요."
         value={searchQueryTemp}
         onChange={(e) => setSearchQueryTemp(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && onSearch()}
-        className="border-none bg-white px-4 py-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border-none bg-white px-4 py-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
       <button
         onClick={onSearch}
