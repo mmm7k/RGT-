@@ -52,11 +52,20 @@
 ┃ ┣ 📜 BooksTable.tsx # 책 목록 테이블 컴포넌트  
 ┃ ┣ 📜 EditBookForm.tsx # 책 수정 폼 컴포넌트  
 ┃ ┣ 📜 Pagination.tsx # 페이지네이션 컴포넌트  
+<<<<<<< HEAD
 ┃ ┣ 📜 SearchBar.tsx # 검색 바 컴포넌트
 
 ┣ 📂 lib  
 ┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
 ┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
+=======
+┃ ┣ 📜 SearchBar.tsx # 검색 바 컴포넌트
+
+┣ 📂 lib  
+┃ ┣ 📜 ReactQueryProvider.tsx # React Query 설정  
+┃ ┣ 📜 supabaseClient.ts # Supabase 클라이언트 설정
+
+> > > > > > > 0178a1066f48b66bbbd254016530fcd1143016a6
 
 ---
 
