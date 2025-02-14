@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import BookDetail from "@/components/BookDetail";
-import { createClient } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabaseClient";
 
 interface Props {

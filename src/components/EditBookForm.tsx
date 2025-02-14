@@ -44,7 +44,6 @@ export default function EditBookForm({ bookId }: EditBookFormProps) {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
   } = useForm<EditBook>({
     resolver: yupResolver(bookSchema),
     defaultValues: book || {}, // 초기 값 설정

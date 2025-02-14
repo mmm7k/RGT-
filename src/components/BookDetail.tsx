@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useGetBookById, useDeleteBook } from "@/components/hooks/useBooks";
 import Link from "next/link";
 import { message } from "antd";
